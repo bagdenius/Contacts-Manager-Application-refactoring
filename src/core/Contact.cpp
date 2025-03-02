@@ -2,6 +2,8 @@
 
 #include <fstream>
 #include <iostream>
+
+#include "../config.hpp"
 using namespace std;
 
 Contact::Contact(string name, string number, string address, string mail)
@@ -16,7 +18,7 @@ void Contact::display() {
 
 void Contact::add() {
   ofstream fout;
-  fout.open("contact-book.txt", ios::app);
+  fout.open(CONTACT_BOOK_PATH, ios::app);
   fout << "\n";
   fout << _name << "\n";
   fout << _number << "\n";

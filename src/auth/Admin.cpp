@@ -2,11 +2,13 @@
 
 #include <fstream>
 #include <iostream>
+
+#include "../config.hpp"
 using namespace std;
 
 Admin::Admin() {
   ifstream fin;
-  fin.open("password.txt", ios::in);
+  fin.open(ADMIN_DATA_PATH, ios::in);
   string username, password;
   getline(fin, username);
   getline(fin, password);
@@ -17,7 +19,7 @@ Admin::Admin() {
 Admin::Admin(string username, string password)
     : _username(username), _password(password) {
   ofstream fout;
-  fout.open("password.txt", ios::out);
+  fout.open(ADMIN_DATA_PATH, ios::out);
   fout << _username << "\n";
   fout << _password;
   cout << "Admin Created\n";
@@ -26,7 +28,7 @@ Admin::Admin(string username, string password)
 void Admin::setUsername(string newUsername) {
   _username = newUsername;
   ofstream fout;
-  fout.open("password.txt", ios::out);
+  fout.open(ADMIN_DATA_PATH, ios::out);
   fout << _username;
   fout << _password;
 }
@@ -34,7 +36,7 @@ void Admin::setUsername(string newUsername) {
 void Admin::setPassword(string newPassword) {
   _password = newPassword;
   ofstream fout;
-  fout.open("password.txt", ios::out);
+  fout.open(ADMIN_DATA_PATH, ios::out);
   fout << _username;
   fout << _password;
 }
@@ -45,5 +47,5 @@ bool Admin::checkCredentials(string username, string password) {
 }
 
 string Admin::getDetails() {
-  return "Username: ", _username, "\nPassword: ", _password;
+  return "Username: " + _username + "\nPassword: " + _password;
 }

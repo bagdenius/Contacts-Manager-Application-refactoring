@@ -2,6 +2,8 @@
 
 #include <fstream>
 #include <iostream>
+
+#include "../config.hpp"
 using namespace std;
 
 DeleteHelper::DeleteHelper(string name) : _name(name) {}
@@ -10,8 +12,8 @@ void DeleteHelper::deleting() {
   string name = _name;
   ifstream fin;
   ofstream fout;
-  fin.open("contact-book.txt", ios::in);
-  fout.open("contact-book-temp.txt", ios::out | ios::trunc);
+  fin.open(CONTACT_BOOK_PATH, ios::in);
+  fout.open(CONTACT_BOOK_TEMP_PATH, ios::out | ios::trunc);
   string input;
   int b = 0;
   int c = 0;
@@ -37,8 +39,8 @@ void DeleteHelper::deleting() {
 void DeleteHelper::temporaryToOriginal() {
   ofstream fout;
   ifstream fin;
-  fout.open("contact-book.txt", ios::out | ios::trunc);
-  fin.open("contact-book-temp.txt", ios::in);
+  fout.open(CONTACT_BOOK_PATH, ios::out | ios::trunc);
+  fin.open(CONTACT_BOOK_TEMP_PATH, ios::in);
   char reading[30];
   while (!fin.eof()) {
     fin.getline(reading, 30);

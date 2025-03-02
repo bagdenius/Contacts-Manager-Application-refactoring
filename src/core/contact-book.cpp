@@ -3,6 +3,7 @@
 #include <fstream>
 #include <iostream>
 
+#include "../config.hpp"
 #include "../helpers/delete-helper.hpp"
 #include "contact.hpp"
 
@@ -20,7 +21,7 @@ void ContactBook::adding() {
 
 void ContactBook::listing() {
   ifstream fin;
-  fin.open("contact-book.txt", ios::in);
+  fin.open(CONTACT_BOOK_PATH, ios::in);
   char input[30];
   int i = 0;
   while (fin) {
@@ -39,7 +40,7 @@ void ContactBook::searching() {
   cout << "Enter name whose contact is to be searched: ";
   getline(cin >> ws, name);
   ifstream fin;
-  fin.open("contact-book.txt", ios::in);
+  fin.open(CONTACT_BOOK_PATH, ios::in);
   string input;
   int c = 0;
   while (fin) {
@@ -61,8 +62,8 @@ void ContactBook::editing() {
   getline(cin >> ws, name);
   ifstream fin;
   ofstream fout;
-  fin.open("contact-book.txt", ios::in);
-  fout.open("contact-book-temp.txt", ios::out | ios::trunc);
+  fin.open(CONTACT_BOOK_PATH, ios::in);
+  fout.open(CONTACT_BOOK_TEMP_PATH, ios::out | ios::trunc);
   string input;
   int b = 0;
   int c = 0;
