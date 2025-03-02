@@ -1,6 +1,6 @@
-#include "include/core/Contact.h"
 #include <iostream>
 #include <fstream>
+#include "Contact.hpp"
 using namespace std;
 
 Contact::Contact(string name, string number, string address, string mail) : contactName(name), contactNumber(number), contactAddress(address), contactEmail(mail) {}

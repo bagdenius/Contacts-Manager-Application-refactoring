@@ -1,6 +1,6 @@
-#include "include/helpers/DeleteHelper.h"
 #include <iostream>
 #include <fstream>
+#include "DeleteHelper.hpp"
 using namespace std;
 
 DeleteHelper::DeleteHelper(string name) : contactName(name) {}

@@ -16,4 +16,5 @@ public:
     void setPass(string newPassword);
     void changePassword();
     void display_mydetails();
+    bool checkCredentials(string user, string pass);
 };

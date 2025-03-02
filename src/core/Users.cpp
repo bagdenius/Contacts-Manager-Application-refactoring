@@ -1,7 +1,7 @@
-#include "include/core/Users.h"
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "Users.hpp"
 using namespace std;
 
 Users::Users(string name_) : name(name_) {}

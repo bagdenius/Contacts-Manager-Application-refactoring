@@ -1,16 +1,18 @@
 #include <iostream>
-#include "Admin.cpp"
-#include "AdminLogin.cpp"
-#include "UserInterface.cpp"
-#include "Contact.cpp"
-#include "Users.cpp"
-#include "ContactBook.cpp"
+#include <string>
+#include "auth/Admin.hpp"
+#include "core/ContactBook.hpp"
+#include "ui/UserInterface.hpp"
+#include "core/Users.hpp"
+using namespace std;
+
 enum Identity
 {
-	User = 1,
-	Admin,
-	NewAdmin
+	user = 1,
+	admin,
+	newAdmin
 };
+
 int main()
 {
 	UserInterface UI;
@@ -20,7 +22,7 @@ int main()
 		int choice = UI.MenuDisplayStart();
 		switch (choice)
 		{
-		case User:
+		case user:
 		{
 			string name;
 			cout << "Enter Your Full name to make an entry into Users.txt: ";
@@ -55,7 +57,7 @@ int main()
 			}
 			break;
 		}
-		case Admin:
+		case admin:
 		{
 			string uname, pass;
 			cout << "Enter Username & Password\n";
@@ -63,7 +65,7 @@ int main()
 			cin >> uname;
 			cout << "Password: ";
 			cin >> pass;
-			AdminLogin AL;
+			Admin AL;
 			bool isLoggedIn = AL.checkCredentials(uname, pass);
 			if (isLoggedIn)
 			{
@@ -115,7 +117,7 @@ int main()
 			}
 			break;
 		}
-		case NewAdmin:
+		case newAdmin:
 		{
 			string uname, pass;
 			cout << "Enter the username for new Admin: ";

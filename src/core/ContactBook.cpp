@@ -1,8 +1,8 @@
-#include "include/core/ContactBook.h"
-#include "include/core/Contact.h"
-#include "include/helpers/DeleteHelper.h"
 #include <iostream>
 #include <fstream>
+#include "ContactBook.hpp"
+#include "Contact.hpp"
+#include "../helpers/DeleteHelper.hpp"
 using namespace std;
 
 void ContactBook::adding()

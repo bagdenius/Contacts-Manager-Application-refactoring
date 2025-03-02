@@ -1,6 +1,6 @@
-#include "./include/auth/Admin.h"
 #include <iostream>
 #include <fstream>
+#include "Admin.hpp"
 using namespace std;
 
 Admin::Admin()
@@ -61,4 +61,12 @@ void Admin::display_mydetails()
 {
 	cout << "Username: " << Username << endl;
 	cout << "Password: " << Password << endl;
+}
+
+bool Admin::checkCredentials(string user, string pass)
+{
+	if (user == Username && pass == Password)
+		return true;
+	else
+		return false;
 }
