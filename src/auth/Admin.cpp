@@ -46,11 +46,11 @@ void Admin::setPassword(string newPassword) {
   fout << _password;
 }
 
-void Admin::changePass() {
+void Admin::changePassword() {
   cout << "Enter new Password: ";
   string newPassword;
   cin >> newPassword;
-  setUsername(newPassword);
+  setPassword(newPassword);
 }
 
 void Admin::displayDetails() {

@@ -13,7 +13,7 @@ class Admin {
   void setUsername(string newUsername);
   void changeUsername();
   void setPassword(string newPassword);
-  void changePass();
+  void changePassword();
   void displayDetails();
   bool checkCredentials(string username, string password);
 };
