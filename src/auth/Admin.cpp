@@ -1,72 +1,64 @@
-#include <iostream>
+#include "admin.hpp"
+
 #include <fstream>
-#include "Admin.hpp"
+#include <iostream>
 using namespace std;
 
-Admin::Admin()
-{
-	ifstream fin;
-	fin.open("password.txt", ios::in);
-	string user, pass;
-	getline(fin, user);
-	getline(fin, pass);
-	Username = user;
-	Password = pass;
+Admin::Admin() {
+  ifstream fin;
+  fin.open("password.txt", ios::in);
+  string username, password;
+  getline(fin, username);
+  getline(fin, password);
+  _username = username;
+  _password = password;
 }
 
-Admin::Admin(string Username_, string Password_) : Username(Username_), Password(Password_)
-{
-	ofstream fout;
-	fout.open("password.txt", ios::out);
-	fout << Username << "\n";
-	fout << Password;
-	cout << "Admin Created\n";
+Admin::Admin(string username, string password)
+    : _username(username), _password(password) {
+  ofstream fout;
+  fout.open("password.txt", ios::out);
+  fout << _username << "\n";
+  fout << _password;
+  cout << "Admin Created\n";
 }
 
-void Admin::setUser(string newUsername)
-{
-	Username = newUsername;
-	ofstream fout;
-	fout.open("password.txt", ios::out);
-	fout << Username;
-	fout << Password;
+void Admin::setUsername(string newUsername) {
+  _username = newUsername;
+  ofstream fout;
+  fout.open("password.txt", ios::out);
+  fout << _username;
+  fout << _password;
 }
 
-void Admin::changeUsername()
-{
-	cout << "Enter new Username: ";
-	string newUsername;
-	cin >> newUsername;
-	setUser(newUsername);
+void Admin::changeUsername() {
+  cout << "Enter new Username: ";
+  string newUsername;
+  cin >> newUsername;
+  setUsername(newUsername);
 }
 
-void Admin::setPass(string newPassword)
-{
-	Password = newPassword;
-	ofstream fout;
-	fout.open("password.txt", ios::out);
-	fout << Username;
-	fout << Password;
+void Admin::setPassword(string newPassword) {
+  _password = newPassword;
+  ofstream fout;
+  fout.open("password.txt", ios::out);
+  fout << _username;
+  fout << _password;
 }
 
-void Admin::changePassword()
-{
-	cout << "Enter new Password: ";
-	string newPassword;
-	cin >> newPassword;
-	setUser(newPassword);
+void Admin::changePass() {
+  cout << "Enter new Password: ";
+  string newPassword;
+  cin >> newPassword;
+  setUsername(newPassword);
 }
 
-void Admin::display_mydetails()
-{
-	cout << "Username: " << Username << endl;
-	cout << "Password: " << Password << endl;
+void Admin::displayDetails() {
+  cout << "Username: " << _username << endl;
+  cout << "Password: " << _password << endl;
 }
 
-bool Admin::checkCredentials(string user, string pass)
-{
-	if (user == Username && pass == Password)
-		return true;
-	else
-		return false;
+bool Admin::checkCredentials(string user, string pass) {
+  if (user == _username && pass == _password) return true;
+  return false;
 }

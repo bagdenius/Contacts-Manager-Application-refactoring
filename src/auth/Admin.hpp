@@ -2,19 +2,18 @@
 #include <string>
 using namespace std;
 
-class Admin
-{
-private:
-    string Username;
-    string Password;
+class Admin {
+ private:
+  string _username;
+  string _password;
 
-public:
-    Admin();
-    Admin(string Username_, string Password_);
-    void setUser(string newUsername);
-    void changeUsername();
-    void setPass(string newPassword);
-    void changePassword();
-    void display_mydetails();
-    bool checkCredentials(string user, string pass);
+ public:
+  Admin();
+  Admin(string username, string password);
+  void setUsername(string newUsername);
+  void changeUsername();
+  void setPassword(string newPassword);
+  void changePass();
+  void displayDetails();
+  bool checkCredentials(string username, string password);
 };
