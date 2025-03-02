@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "auth/admin.hpp"
-#include "auth/users.hpp"
+#include "auth/user.hpp"
 #include "core/contact-book.hpp"
 #include "ui/ui.hpp"
 using namespace std;
@@ -18,7 +18,7 @@ int main() {
         string name;
         cout << "Enter Your Full name to make an entry into Users.txt: ";
         getline(cin >> ws, name);
-        Users user(name);
+        User user(name);
         user.checkIn();
         ContactBook contactBook;
         int flag = 0;

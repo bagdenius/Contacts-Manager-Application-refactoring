@@ -1,13 +1,13 @@
-#include "users.hpp"
+#include "user.hpp"
 
 #include <fstream>
 #include <iostream>
 #include <string>
 using namespace std;
 
-Users::Users(string name) : _name(name) {}
+User::User(string name) : _name(name) {}
 
-void Users::checkIn() {
+void User::checkIn() {
   ofstream fout;
   fout.open("users.txt", ios::app);
   fout << _name << "\n" << __TIMESTAMP__ << "\n";

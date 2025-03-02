@@ -1,11 +1,11 @@
 #include <string>
 using namespace std;
 
-class Users {
+class User {
  private:
   string _name;
 
  public:
-  Users(string name);
+  User(string name);
   void checkIn();
 };
