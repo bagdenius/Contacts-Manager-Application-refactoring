@@ -1,17 +1,15 @@
+#include "include/core/Users.h"
 #include <iostream>
-#include <cstring>
+#include <fstream>
+#include <string>
 using namespace std;
-class Users
-{
-	string name;
 
-public:
-	Users(string name_) : name(name_) {}
-	void checkIn()
-	{
-		ofstream fout;
-		fout.open("Users.txt", ios::app);
-		fout << name << "\n"
-			 << __TIMESTAMP__ << "\n";
-	}
-};
+Users::Users(string name_) : name(name_) {}
+
+void Users::checkIn()
+{
+	ofstream fout;
+	fout.open("Users.txt", ios::app);
+	fout << name << "\n"
+		 << __TIMESTAMP__ << "\n";
+}
