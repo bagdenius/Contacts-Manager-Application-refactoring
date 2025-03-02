@@ -31,13 +31,6 @@ void Admin::setUsername(string newUsername) {
   fout << _password;
 }
 
-void Admin::changeUsername() {
-  cout << "Enter new Username: ";
-  string newUsername;
-  cin >> newUsername;
-  setUsername(newUsername);
-}
-
 void Admin::setPassword(string newPassword) {
   _password = newPassword;
   ofstream fout;
@@ -46,19 +39,11 @@ void Admin::setPassword(string newPassword) {
   fout << _password;
 }
 
-void Admin::changePassword() {
-  cout << "Enter new Password: ";
-  string newPassword;
-  cin >> newPassword;
-  setPassword(newPassword);
-}
-
-void Admin::displayDetails() {
-  cout << "Username: " << _username << endl;
-  cout << "Password: " << _password << endl;
-}
-
-bool Admin::checkCredentials(string user, string pass) {
-  if (user == _username && pass == _password) return true;
+bool Admin::checkCredentials(string username, string password) {
+  if (username == _username && password == _password) return true;
   return false;
+}
+
+string Admin::getDetails() {
+  return "Username: ", _username, "\nPassword: ", _password;
 }

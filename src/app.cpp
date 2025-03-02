@@ -1,7 +1,4 @@
-
-
 #include <iostream>
-#include <string>
 
 #include "auth/admin.hpp"
 #include "auth/users.hpp"
@@ -100,7 +97,7 @@ int main() {
         cout << "Enter(Create) the Password: ";
         cin >> password;
         Admin admin(username, password);
-        admin.displayDetails();
+        ui.displayAdminDetails(admin);
         break;
       }
       case 0: {

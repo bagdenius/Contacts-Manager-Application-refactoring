@@ -2,6 +2,7 @@
 
 #include <fstream>
 #include <iostream>
+
 using namespace std;
 
 void UserInterface::displayStart() {
@@ -43,4 +44,22 @@ int UserInterface::displayUserMenu() {
   int choice;
   cin >> choice;
   return choice;
+}
+
+void UserInterface::changeAdminUsername(Admin user) {
+  cout << "Enter new Username: ";
+  string newUsername;
+  cin >> newUsername;
+  user.setUsername(newUsername);
+}
+
+void UserInterface::changeAdminPassword(Admin user) {
+  cout << "Enter new Password: ";
+  string newPassword;
+  cin >> newPassword;
+  user.setPassword(newPassword);
+}
+
+void UserInterface::displayAdminDetails(Admin user) {
+  cout << user.getDetails();
 }

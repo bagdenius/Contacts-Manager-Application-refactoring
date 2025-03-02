@@ -11,9 +11,7 @@ class Admin {
   Admin();
   Admin(string username, string password);
   void setUsername(string newUsername);
-  void changeUsername();
   void setPassword(string newPassword);
-  void changePassword();
-  void displayDetails();
   bool checkCredentials(string username, string password);
+  string getDetails();
 };
