@@ -24,12 +24,13 @@ void ContactBook::listing() {
   fin.open(CONTACT_BOOK_PATH, ios::in);
   char input[30];
   int i = 0;
+  cout << "\n";
   while (fin) {
     fin.getline(input, 30);
     if (i != 4)
-      cout << _details[i] << " : " << input << endl;
+      cout << " " << _details[i] << ": " << input << endl;
     else
-      cout << _details[i] << input << endl;
+      cout << " " << _details[i] << input << endl;
     i++;
     if (i == 5) i = 0;
   }
@@ -37,18 +38,19 @@ void ContactBook::listing() {
 
 void ContactBook::searching() {
   string name;
-  cout << "Enter name whose contact is to be searched: ";
+  cout << "\n - Введіть ім'я контакта, якого шукаєте: ";
   getline(cin >> ws, name);
   ifstream fin;
   fin.open(CONTACT_BOOK_PATH, ios::in);
   string input;
   int c = 0;
+  cout << "\n";
   while (fin) {
     getline(fin >> ws, input);
     if (input == name) {
       c++;
       for (int i = 0; i < 4; i++) {
-        cout << _details[i] << ": " << input << endl;
+        cout << " " << _details[i] << ": " << input << endl;
         getline(fin >> ws, input);
       }
     }

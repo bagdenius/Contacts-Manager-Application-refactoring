@@ -22,7 +22,7 @@ void UserInterface::run() {
         createNewAdmin();
         break;
       case 0:
-        cout << "\n\n Завершення роботи програми...\n\n";
+        cout << "\n\n Exiting the application...\n\n";
         return;
     }
   }
@@ -30,7 +30,7 @@ void UserInterface::run() {
 
 void UserInterface::handleUser() {
   string name;
-  cout << " - Введіть своє ім'я: ";
+  cout << " - Enter your name: ";
   getline(cin >> ws, name);
 
   User user(name);
@@ -54,15 +54,15 @@ void UserInterface::handleUser() {
 
 void UserInterface::handleAdmin() {
   string username, password;
-  cout << "\n - Вхід в акаунт -"
-          "\n - Логін: ";
+  cout << "\n - Authorize -"
+          "\n Username: ";
   cin >> username;
-  cout << " - Пароль: ";
+  cout << " Password: ";
   cin >> password;
 
   Admin admin;
   if (!admin.checkCredentials(username, password)) {
-    cout << "\n Введено невірний пароль!\n";
+    cout << "\n Wrong Password!";
     return;
   }
 
@@ -93,24 +93,24 @@ void UserInterface::handleAdmin() {
 
 void UserInterface::createNewAdmin() {
   string username, password;
-  cout << " - Задайте ім'я користувача: ";
+  cout << "Enter the username for new Admin: ";
   cin >> username;
-  cout << " - Задайте пароль: ";
+  cout << "Enter(Create) the Password: ";
   cin >> password;
 
   Admin admin(username, password);
-  cout << " Адміна було успішно створено!\n";
+  cout << "Admin successfully created!\n";
 }
 
 void UserInterface::changeAdminUsername(Admin user) {
-  cout << " - Введіть нове ім'я користувача: ";
+  cout << "Enter new Username: ";
   string newUsername;
   cin >> newUsername;
   user.setUsername(newUsername);
 }
 
 void UserInterface::changeAdminPassword(Admin user) {
-  cout << " - Введіть новий пароль: ";
+  cout << "Enter new Password: ";
   string newPassword;
   cin >> newPassword;
   user.setPassword(newPassword);
@@ -121,26 +121,26 @@ void UserInterface::displayAdminDetails(Admin user) {
 }
 
 int UserInterface::displayStartMenu() {
-  cout << "\n\t--- CONTACTIFY ---"
-          "\n\n [1] Увійти як користувач"
-          "\n [2] Увійти як адміністратор"
-          "\n [3] Створити адміністратора"
-          "\n [0] Вихід"
-          "\n\n - Оберіть пункт меню: ";
+  cout << "\n\t--- Contactify ---"
+          "\n\n [1] USER"
+          "\n [2] ADMIN"
+          "\n [3] CREATE ADMIN"
+          "\n [0] EXIT"
+          "\n\n - Enter the choice: ";
   int choice;
   cin >> choice;
   return choice;
 }
 
 int UserInterface::displayAdminMenu() {
-  cout << "\n\n\t- Головне меню - "
-          "\n\n [1] Додати контакт"
-          "\n [2] Список всіх контактів"
-          "\n [3] Пошук контакту"
-          "\n [4] Оновити контакт"
-          "\n [5] Видалити контакт"
-          "\n [0] Вихід"
-          "\n\n - Оберіть пункт меню: ";
+  cout << "\n\n\t- MAIN MENU- "
+          "\n\n [1] Add a new Contact"
+          "\n [2] List all Contacts"
+          "\n [3] Search for contact"
+          "\n [4] Edit a Contact"
+          "\n [5] Delete a Contact"
+          "\n [0] Exit"
+          "\n\n - Enter the choice: ";
   int op;
   cin >> op;
   return op;

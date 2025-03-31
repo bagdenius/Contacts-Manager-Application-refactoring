@@ -4,7 +4,7 @@ using namespace std;
 
 class ContactBook {
  private:
-  string _details[5] = {"Name", "Phone", "Address", "Email", ""};
+  string _details[5] = {"Ім'я", "Телефон", "Адреса", "Електронна адреса", ""};
 
  public:
   void adding();
