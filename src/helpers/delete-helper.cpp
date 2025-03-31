@@ -54,5 +54,5 @@ void DeleteHelper::temporaryToOriginal() {
 void DeleteHelper::deleteFromContactbook() {
   deleting();
   temporaryToOriginal();
-  cout << "\nSuccessfully Deleted.\n";
+  cout << "\n Контакт успішно видалено!\n";
 }
