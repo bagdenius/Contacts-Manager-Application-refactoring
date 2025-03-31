@@ -60,7 +60,7 @@ void ContactBook::searching() {
 
 void ContactBook::editing() {
   string name;
-  cout << "Enter name whose contact is to be Edited: ";
+  cout << "\n - Введіть ім'я контакта, якого бажаєте оновити: ";
   getline(cin >> ws, name);
   ifstream fin;
   ofstream fout;
@@ -74,10 +74,10 @@ void ContactBook::editing() {
     b++;
     if (input == name) {
       c++;
-      cout << "Enter new details: \n";
+      cout << "\n Введіть нову інформацію: \n";
       for (int i = 0; i < 4; i++) {
         string newDetail;
-        cout << "New " << _details[i] << ": ";
+        cout << " Новий(а) " << _details[i] << ": ";
         getline(cin >> ws, newDetail);
         b++;
         fout << newDetail << "\n";
@@ -96,7 +96,7 @@ void ContactBook::editing() {
 
 void ContactBook::deleting() {
   string name;
-  cout << "Enter name whose contact is to be Deleted: ";
+  cout << "\n - Введіть ім'я контакта, якого бажаєте видалити: ";
   getline(cin >> ws, name);
   DeleteHelper deleteHelper(name);
   deleteHelper.deleteFromContactbook();
