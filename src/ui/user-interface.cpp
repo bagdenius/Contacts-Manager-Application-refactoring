@@ -147,11 +147,11 @@ int UserInterface::displayAdminMenu() {
 }
 
 int UserInterface::displayUserMenu() {
-  cout << "\n\n\t- MAIN MENU- "
-          "\n\n [1] List all Contacts"
-          "\n [2] Search for contact"
-          "\n [0] Exit"
-          "\n\n - Enter the choice: ";
+  cout << "\n\n\t- Головне меню -"
+          "\n\n [1] Список всіх контактів"
+          "\n [2] Пошук контакту"
+          "\n [0] Вихід"
+          "\n\n - Оберіть пункт меню: ";
   int op;
   cin >> op;
   return op;
